@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YAB-E2-43X">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ynd-9f-ahP">
+            <objects>
+                <navigationController id="YAB-E2-43X" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jXk-Io-c6J">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tfK-Vw-gQa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouy-DM-4ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="-2"/>
+        </scene>
+        <!--Stream View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="StreamViewController" customModule="TestTapLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-aO-ZJE" customClass="MetalView" customModule="TestTapLab" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rFF-0y-w4X">
+                                <rect key="frame" x="57.666666666666657" y="123" width="278" height="32"/>
+                                <segments>
+                                    <segment title="Scale To Fill"/>
+                                    <segment title="Aspect Fill"/>
+                                    <segment title="Aspect Fit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="scaleSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gLa-xj-Hob"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEx-sZ-wH9">
+                                <rect key="frame" x="159" y="723" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="NjX-3U-qtv"/>
+                                    <constraint firstAttribute="height" constant="75" id="UN3-X1-SA3"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="May-ne-Qla"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U8-9l-ovv">
+                                <rect key="frame" x="254" y="743" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="40b-EY-HCD"/>
+                                    <constraint firstAttribute="width" constant="35" id="a4v-00-Huu"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="VHS"/>
+                                <connections>
+                                    <action selector="vhsEffectButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="AUN-1q-5Oz"/>
+                                    <action selector="vhsEffectButtonUp:" destination="BYZ-38-t0r" eventType="touchDragInside" id="cTk-jT-p6q"/>
+                                    <action selector="vhsEffectButtonUp:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="mdB-O3-bic"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rFF-0y-w4X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="328-tg-CEi"/>
+                            <constraint firstItem="dzk-aO-ZJE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7ss-6L-1rJ"/>
+                            <constraint firstItem="dzk-aO-ZJE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ZM-Xx-kab"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kEx-sZ-wH9" secondAttribute="bottom" constant="20" id="CqN-N1-BHd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dzk-aO-ZJE" secondAttribute="trailing" id="KXh-jR-Wsw"/>
+                            <constraint firstItem="8U8-9l-ovv" firstAttribute="leading" secondItem="kEx-sZ-wH9" secondAttribute="trailing" constant="20" id="NsJ-h1-enT"/>
+                            <constraint firstItem="rFF-0y-w4X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="WoJ-Ub-4Sb"/>
+                            <constraint firstItem="kEx-sZ-wH9" firstAttribute="centerY" secondItem="8U8-9l-ovv" secondAttribute="centerY" id="gZz-B2-mxB"/>
+                            <constraint firstAttribute="bottom" secondItem="dzk-aO-ZJE" secondAttribute="bottom" id="gfF-QL-h7J"/>
+                            <constraint firstItem="kEx-sZ-wH9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hYG-GN-Di4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="W4L-Ca-USi"/>
+                    <connections>
+                        <outlet property="metalView" destination="dzk-aO-ZJE" id="8qP-Uj-xFK"/>
+                        <outlet property="recordButton" destination="kEx-sZ-wH9" id="9pc-uc-Y42"/>
+                        <outlet property="scaleSegmentedControl" destination="rFF-0y-w4X" id="rk5-4f-Zii"/>
+                        <outlet property="vhsEffectButton" destination="8U8-9l-ovv" id="pwu-gA-AxS"/>
+                        <segue destination="eO3-ae-vxq" kind="show" identifier="goToExport" id="udR-Mg-Cb4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129.00763358778624" y="-2.1126760563380285"/>
+        </scene>
+        <!--Export View Controller-->
+        <scene sceneID="X3a-aB-z62">
+            <objects>
+                <viewController storyboardIdentifier="ExportViewController" id="eO3-ae-vxq" customClass="ExportViewController" customModule="TestTapLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8KF-52-QLf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-Xa-8T2" customClass="PreviewView" customModule="TestTapLab" customModuleProvider="target">
+                                <rect key="frame" x="20" y="171" width="353" height="510"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="510" id="J6s-Ac-8nz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zwZ-NS-cTP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OAp-Xa-8T2" firstAttribute="leading" secondItem="zwZ-NS-cTP" secondAttribute="leading" constant="20" id="WGE-5l-47n"/>
+                            <constraint firstItem="OAp-Xa-8T2" firstAttribute="centerY" secondItem="8KF-52-QLf" secondAttribute="centerY" id="fqp-Xg-u5p"/>
+                            <constraint firstItem="zwZ-NS-cTP" firstAttribute="trailing" secondItem="OAp-Xa-8T2" secondAttribute="trailing" constant="20" id="ztU-rG-lpb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sOD-5M-Ku7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="712-jn-uGW">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sAf-QG-iIi">
+                                <rect key="frame" x="303" y="4.6666666666666679" width="74" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Export"/>
+                                <connections>
+                                    <action selector="exportButtonTapped:" destination="eO3-ae-vxq" eventType="touchUpInside" id="iqq-rF-oOk"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="previewView" destination="OAp-Xa-8T2" id="HeK-mQ-QLY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtT-1w-j53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945.80152671755718" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
